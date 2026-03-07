@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Issues Tracker</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/github-logo.png"
+      type="image/x-icon"
+    />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Daisy Ui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+
+  </head>
+  <body>
+    <section
+      id="login-section"
+      class="min-h-screen flex justify-center items-center px-4"
+    >
+      <div class="bg-white w-full max-w-xl rounded-2xl shadow-lg p-8">
+        <div class="text-center space-y-3 mb-8">
+          <div
+            class="w-20 h-20 rounded-full items-center mx-auto"
+          > <img src="./assets/github-logo.png" alt="">
+          </div>
+          <h1 class="text-4xl font-bold">GitHub Issues Tracker</h1>
+          <p class="text-gray-500">Sign in to manage your issues</p>
+        </div>
+
+        <form id="login-form" class="space-y-4">
+          <div>
+            <label class="label font-semibold">Username</label>
+            <input
+              id="username"
+              type="text"
+              placeholder="Enter Username"
+              class="input input-bordered w-full"
+            />
+          </div>
+
+          <div>
+            <label class="label font-semibold">Password</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter Password"
+              class="input input-bordered w-full"
+            />
+          </div>
+
+          <button id="login-btn" type="button" class="btn btn-primary w-full mt-3">
+  Sign In
+</button>
+        </form>
+
+        <div class="divider">OR</div>
+
+        <div class="bg-slate-100 rounded-xl p-5 text-center">
+          <p class="text-gray-500 mb-2">Demo Credentials</p>
+          <p class="font-semibold">Username: admin</p>
+          <p class="font-semibold">Password: admin123</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
