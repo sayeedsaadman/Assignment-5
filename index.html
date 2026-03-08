@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitHub Issues Tracker</title>
+
     <!-- favicon -->
     <link
       rel="shortcut icon"
       href="./assets/github-logo.png"
       type="image/x-icon"
     />
+
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,19 +36,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-
   </head>
-  <body>
+
+  <body class="bg-base-200">
+    <!-- Login Section -->
     <section
       id="login-section"
       class="min-h-screen flex justify-center items-center px-4"
     >
       <div class="bg-white w-full max-w-xl rounded-2xl shadow-lg p-8">
         <div class="text-center space-y-3 mb-8">
-          <div
-            class="w-20 h-20 rounded-full items-center mx-auto"
-          > <img src="./assets/github-logo.png" alt="">
+          <div class="w-20 h-20 rounded-full items-center mx-auto">
+            <img src="./assets/github-logo.png" alt="GitHub Logo" />
           </div>
           <h1 class="text-4xl font-bold">GitHub Issues Tracker</h1>
           <p class="text-gray-500">Sign in to manage your issues</p>
@@ -73,9 +74,15 @@
             />
           </div>
 
-          <button id="login-btn" type="button" class="btn btn-primary w-full mt-3">
-  Sign In
-</button>
+          <p id="login-error" class="text-red-500 text-sm"></p>
+
+          <button
+            id="login-btn"
+            type="submit"
+            class="btn btn-primary w-full mt-3"
+          >
+            Sign In
+          </button>
         </form>
 
         <div class="divider">OR</div>
@@ -88,15 +95,19 @@
       </div>
     </section>
 
-    <!-- main-section -->
-     <section id="main-section" class="hidden">
+    <!-- Main Section -->
+    <section id="main-section" class="hidden">
       <!-- Navbar -->
       <section class="bg-white shadow-sm">
         <div
           class="w-11/12 mx-auto py-4 flex flex-col md:flex-row gap-4 justify-between items-center"
         >
           <div class="flex items-center gap-2">
-            <img src="./assets/github-logo.png" alt="" class="max-h-[40px]">
+            <img
+              src="./assets/github-logo.png"
+              alt="GitHub Logo"
+              class="max-h-[40px]"
+            />
             <h2 class="text-2xl font-bold">GitHub Issues Tracker</h2>
           </div>
 
@@ -107,18 +118,21 @@
               placeholder="Search issues..."
               class="input input-bordered w-full md:w-80"
             />
-            <button id="btn-search" class="btn btn-primary">Search</button>
+            <button id="btn-search" type="button" class="btn btn-primary">
+              Search
+            </button>
           </div>
         </div>
       </section>
 
       <main class="w-11/12 mx-auto py-8">
-  
+        <!-- Tabs -->
         <section class="mb-6">
           <div class="flex gap-3 flex-wrap">
             <button
               id="tab-all"
-              onclick=""
+              type="button"
+              onclick="loadAllIssues()"
               class="btn btn-primary tab-btn"
             >
               All
@@ -126,7 +140,8 @@
 
             <button
               id="tab-open"
-              onclick=""
+              type="button"
+              onclick="loadOpenIssues()"
               class="btn btn-outline btn-primary tab-btn"
             >
               Open
@@ -134,7 +149,8 @@
 
             <button
               id="tab-closed"
-              onclick=""
+              type="button"
+              onclick="loadClosedIssues()"
               class="btn btn-outline btn-primary tab-btn"
             >
               Closed
@@ -142,6 +158,7 @@
           </div>
         </section>
 
+        <!-- Summary -->
         <section class="bg-white rounded-xl p-5 shadow-sm mb-6">
           <div
             class="flex flex-col md:flex-row gap-4 justify-between items-center"
@@ -150,7 +167,7 @@
               <div
                 class="w-12 h-12 rounded-full bg-violet-100 flex justify-center items-center"
               >
-                <img src="./assets/Aperture.png" alt="">
+                <img src="./assets/Aperture.png" alt="Aperture Icon" />
               </div>
               <div>
                 <h2 class="font-bold text-2xl">
@@ -164,11 +181,15 @@
 
             <div class="flex items-center gap-6 text-sm">
               <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                <span
+                  class="w-3 h-3 rounded-full bg-green-500 inline-block"
+                ></span>
                 Open
               </div>
               <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-violet-500 inline-block"></span>
+                <span
+                  class="w-3 h-3 rounded-full bg-violet-500 inline-block"
+                ></span>
                 Closed
               </div>
             </div>
@@ -176,18 +197,22 @@
         </section>
 
         <!-- Spinner -->
-        <section id="spinner" class="flex justify-center items-center py-10 hidden">
+        <section
+          id="spinner"
+          class="flex justify-center items-center py-10 hidden"
+        >
           <span class="loading loading-bars loading-xl"></span>
         </section>
-<!-- 
-        Issues Container -->
+
+        <!-- Issues Container -->
         <section
           id="issues-container"
           class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5"
         >
-          <div class="col-span-full text-center bg-white rounded-xl py-16 space-y-4">
+          <div
+            class="col-span-full text-center bg-white rounded-xl py-16 space-y-4"
+          >
             <p class="text-gray-400 text-xl">No issues loaded yet</p>
-
           </div>
         </section>
       </main>
@@ -199,7 +224,7 @@
         <div id="details-container" class="space-y-4"></div>
         <div class="modal-action">
           <form method="dialog">
-            <button class="btn">Close</button>
+            <button class="btn" type="submit">Close</button>
           </form>
         </div>
       </div>
