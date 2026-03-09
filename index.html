@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitHub Issues Tracker</title>
 
+    <link rel="stylesheet" href="style.css">
+
     <!-- favicon -->
     <link
       rel="shortcut icon"
@@ -130,27 +132,27 @@
         <section class="mb-6">
           <div class="flex gap-3 flex-wrap">
             <button
+              onclick="loadAllIssues()"
               id="tab-all"
               type="button"
-              onclick="loadAllIssues()"
               class="btn btn-primary tab-btn"
             >
               All
             </button>
 
             <button
+              onclick="loadOpenIssues()"
               id="tab-open"
               type="button"
-              onclick="loadOpenIssues()"
               class="btn btn-outline btn-primary tab-btn"
             >
               Open
             </button>
 
             <button
+              onclick="loadClosedIssues()"
               id="tab-closed"
               type="button"
-              onclick="loadClosedIssues()"
               class="btn btn-outline btn-primary tab-btn"
             >
               Closed

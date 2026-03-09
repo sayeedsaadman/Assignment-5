@@ -5,8 +5,6 @@ const searchIssueUrl = "https://phi-lab-server.vercel.app/api/v1/lab/issues/sear
 let allIssues = [];
 let currentTab = "all";
 
-
-// remove active tab style
 function removeActiveTab() {
   const tabButtons = document.querySelectorAll(".tab-btn");
 
@@ -16,7 +14,7 @@ function removeActiveTab() {
   });
 }
 
-// set active tab style
+
 function setActiveTab(id) {
   removeActiveTab();
 
@@ -38,7 +36,7 @@ function getStatusText(issue) {
   }
 }
 
-// card border class
+// card border for close and open
 function getBorderClass(status) {
   if (status === "open") {
     return "border-t-4 border-green-500";
@@ -59,7 +57,7 @@ function formatDate(dateString) {
 }
 
 
-// spinner manage
+// spinner 
 function manageSpinner(status) {
   const spinner = document.getElementById("spinner");
   const issuesContainer = document.getElementById("issues-container");
@@ -147,11 +145,11 @@ function displayIssues(issues) {
         ? issue.labels[1]
         : "help wanted";
 
-    const author = issue.author ? issue.author : "john_doe";
-    const priority = issue.priority ? issue.priority : "low";
+    const author = issue.author ? issue.author : "Author Name Unavailable";
+    const priority = issue.priority ? issue.priority : "Priority Unavailable";
     const createdAt = issue.createdAt
       ? formatDate(issue.createdAt)
-      : "1/15/2024";
+      : "date Unavailable";
     const titleText = issue.title ? issue.title : "No Title";
 
     let descriptionText = "No description available";
@@ -312,7 +310,7 @@ function displayIssueDetail(issue) {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-5 rounded-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-100 p-5 rounded-xl">
         <div>
           <p class="text-slate-400 text-lg mb-2">Assignee:</p>
           <h3 class="text-2xl font-semibold text-slate-700">${author}</h3>
