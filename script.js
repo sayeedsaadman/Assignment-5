@@ -209,11 +209,11 @@ function displayIssues(issues) {
           </div>
 
           <div class="flex flex-wrap gap-2">
-            <span class="border bg-yellow-300 text-black text-[10px] px-2 py-1 rounded-full uppercase font-medium">
+            <span class="border bg-yellow-300 text-black text-[10px] px-2 py-1 rounded-full font-medium">
               ${category}
             </span>
 
-            <span class="border bg-yellow-300 text-black text-[10px] px-2 py-1 rounded-full uppercase font-medium">
+            <span class="border bg-yellow-300 text-black text-[10px] px-2 py-1 rounded-full font-medium">
               ${label}
             </span>
           </div>
@@ -295,11 +295,11 @@ function displayIssueDetail(issue) {
       </div>
 
       <div class="flex flex-wrap gap-2">
-        <span class="border bg-yellow-300 text-black text-[10px] px-2 py-1 rounded-full uppercase font-medium">
+        <span class="border bg-yellow-300 text-black text-[10px] px-2 py-1 rounded-full font-medium">
           ${category}
         </span>
 
-        <span class="border bg-yellow-300 text-black text-[10px] px-2 py-1 rounded-full uppercase font-medium">
+        <span class="border bg-yellow-300 text-black text-[10px] px-2 py-1 rounded-full font-medium">
           ${label}
         </span>
       </div>
